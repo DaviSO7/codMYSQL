@@ -1,28 +1,3 @@
-create database 28_10;
-use 28_10;
-
-create table Cliente(
-codCli int not null primary key,
-nomCli varchar(60)
-);
-
-create table Produtos(
-codProd int not null primary key,
-nomProduto varchar(45) not null,
-preco decimal(10,2),
-codCli int,
-foreign key (codCli) References Cliente (codCli)
-);
-
-insert into Cliente (codCli, nomCli)
-values ('01234', 'Davi'),
-	   ('56789', 'Eduardo'),
-       ('09876', 'Carlos');
-
-insert into Produtos(codProd, nomProduto, preco)
-values ('6789', 'Carta Pokemon', 20.51),
-	   ('9399349', 'Bisteca', 80.77),
-	   ('289328', 'Blister Pokemon', 55.22);
-select*from Produtos;
-select*from Cliente;
-
+update Cliente
+set nomCli = 'Nicolas'
+where codCli = 1234;
